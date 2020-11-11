@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<robot name="tw_base_v1_sim" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <gazebo reference="part_1"><!--base_link-->
+        <material>Gazebo/DarkGrey</material>
+    </gazebo>
+
+
+    <gazebo reference="n20-43mm-d-shaft-wheel-1.snapshot.9_2"><!--wheel_left_link>-->
+        <mu1>0.1</mu1>
+        <mu2>0.1</mu2>
+        <kp>500000.0</kp>
+        <kd>10.0</kd>
+        <minDepth>0.001</minDepth>
+        <maxVel>0.1</maxVel>
+        <fdir1>1 0 0</fdir1>
+        <material>Gazebo/FlatBlack</material>
+    </gazebo>
+
+    <gazebo reference="n20-43mm-d-shaft-wheel-1.snapshot.9"><!--wheel_right_link-->
+        <mu1>0.1</mu1>
+        <mu2>0.1</mu2>
+        <kp>500000.0</kp>
+        <kd>10.0</kd>
+        <minDepth>0.001</minDepth>
+        <maxVel>0.1</maxVel>
+        <fdir1>1 0 0</fdir1>
+        <material>Gazebo/FlatBlack</material>
+    </gazebo>
+
+    <gazebo reference="ball">
+        <mu1>0.1</mu1>
+        <mu2>0.1</mu2>
+        <kp>1000000.0</kp>
+        <kd>100.0</kd>
+        <minDepth>0.001</minDepth>
+        <maxVel>1.0</maxVel>
+        <material>Gazebo/FlatBlack</material>
+    </gazebo>
+
+    <gazebo reference="ball_2">
+        <mu1>0.1</mu1>
+        <mu2>0.1</mu2>
+        <kp>1000000.0</kp>
+        <kd>100.0</kd>
+        <minDepth>0.001</minDepth>
+        <maxVel>1.0</maxVel>
+        <material>Gazebo/FlatBlack</material>
+    </gazebo>
+
+    <gazebo>
+        <plugin name="tw_base_v1_controller" filename="libgazebo_ros_diff_drive.so">
+        <commandTopic>cmd_vel</commandTopic>
+        <odometryTopic>odom</odometryTopic>
+        <odometryFrame>odom</odometryFrame>
+        <odometrySource>world</odometrySource>
+        <publishOdomTF>true</publishOdomTF>
+        <robotBaseFrame>base_footprint</robotBaseFrame>
+        <publishWheelTF>true</publishWheelTF>
+        <publishTf>true</publishTf>
+        <publishWheelJointState>true</publishWheelJointState>
+        <legacyMode>false</legacyMode>
+        <updateRate>30</updateRate>
+        <leftJoint>LM_Revolute</leftJoint>
+        <rightJoint>RM_Revolute</rightJoint>
+        <wheelSeparation>0.07835</wheelSeparation>
+        <wheelDiameter>0.043</wheelDiameter>
+        <wheelAcceleration>1</wheelAcceleration>
+        <wheelTorque>10</wheelTorque>
+        <rosDebugLevel>na</rosDebugLevel>
+        </plugin>
+    </gazebo>
+
+</robot>

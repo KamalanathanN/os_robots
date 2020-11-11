@@ -1,0 +1,328 @@
+<?xml version="1.0"?>
+
+<robot name="tw_base" xmlns:xacro="http://ros.org/wiki/xacro">
+
+
+<link name="base_footprint">
+    <visual>
+        <origin xyz="0 0 0" rpy="0 -0 0"/>
+        <geometry>
+            <box size="0.001 0.001 0.001" />
+        </geometry>
+    </visual>
+</link>
+
+<joint name="base_footprint_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="base_footprint"/>
+    <child link="part_1" />
+</joint>
+
+<link name="part_1"><!--Base link-->
+    <visual>
+        <origin xyz= "-0.000128133 -9.90901e-05 0.0147895" rpy="0 -0 0" />
+    <geometry>
+            <mesh filename="package://os_robots_description/meshes/part_1.stl"/>
+    </geometry>
+    <material name="part_1_material">
+        <color rgba="0.301961 0.301961 0.301961 1.0"/>
+    </material>
+    </visual>
+    <collision>
+        <origin xyz="-0.000128133 -9.90901e-05 0.0147895" rpy="0 -0 0" />
+    <geometry>
+        <mesh filename="package://os_robots_description/meshes/part_1.stl"/>
+    </geometry>
+    <material name="part_1_material">
+        <color rgba="0.301961 0.301961 0.301961 1.0"/>
+    </material>
+    </collision>
+    <inertial>
+        <origin xyz="-0.000128133 -9.92196e-05 0.0157766" rpy="0 0 0"/>
+        <mass value="0.0463133" />
+        <inertia ixx="5.2942e-05" ixy="0"  ixz="0" iyy="2.42532e-05" iyz="-7.42025e-12" izz="7.71632e-05" />
+    </inertial>
+</link>
+
+<link name="n@)"> <!--Right Motor-->
+    <visual>
+        <origin xyz="0.127619 0.231707 0.00135678" rpy="3.14159 2.65197e-31 0" />
+    <geometry>
+        <mesh filename="package://os_robots_description/meshes/n@).stl"/>
+    </geometry>
+    <material name="n@)_material">
+        <color rgba="0.901961 0.878431 0.811765 1.0"/>
+    </material>
+    </visual>
+    <collision>
+        <origin xyz="0.127619 0.231707 0.00135678" rpy="3.14159 2.65197e-31 0" />
+    <geometry>
+        <mesh filename="package://os_robots_description/meshes/n@).stl"/>
+    </geometry>
+    <material name="n@)_material">
+        <color rgba="0.901961 0.878431 0.811765 1.0"/>
+    </material>
+    </collision>
+    <inertial>
+        <origin xyz="0.00683686 2.68432e-05 -0.0055173" rpy="0 0 0"/>
+        <mass value="0.0202353" />
+        <inertia ixx="3.93877e-07" ixy="7.1532e-09"  ixz="1.17044e-07" iyy="1.68208e-06" iyz="6.74559e-09" izz="1.66679e-06" />
+    </inertial>
+</link>
+
+<link name="n20-43mm-d-shaft-wheel-1.snapshot.9"> <!--Right Wheel-->
+    <visual>
+        <origin xyz="-0.0365766 0.030151 0.0172766" rpy="3.14159 9.86076e-32 0" />
+    <geometry>
+        <mesh filename="package://os_robots_description/meshes/n20-43mm-d-shaft-wheel-1.snapshot.9.stl"/>
+    </geometry>
+    <material name="n20-43mm-d-shaft-wheel-1.snapshot.9_material">
+        <color rgba="0 0 0 1.0"/>
+    </material>
+    </visual>
+    <collision>
+        <origin xyz="-0.0365766 0.030151 0.0172766" rpy="3.14159 9.86076e-32 0" />
+    <geometry>
+        <mesh filename="package://os_robots_description/meshes/n20-43mm-d-shaft-wheel-1.snapshot.9.stl"/>
+    </geometry>
+    <material name="n20-43mm-d-shaft-wheel-1.snapshot.9_material">
+        <color rgba="0 0 0 1.0"/>
+    </material>
+    </collision>
+    <inertial>
+        <origin xyz="-8.41996e-08 4.29217e-05 -0.00381857" rpy="0 0 0"/>
+        <mass value="0.0222369" />
+        <inertia ixx="3.68546e-06" ixy="4.66188e-10"  ixz="-2.19354e-10" iyy="3.67087e-06" iyz="-1.16215e-10" izz="6.30613e-06" />
+    </inertial>
+</link>
+
+<joint name="RM_Revolute" type="revolute">
+<origin xyz="-0.0199 4.16334e-16 -0.005" rpy="-1.5708 2.83277e-16 1.5708" />
+<parent link="n@)" />
+<child link="n20-43mm-d-shaft-wheel-1.snapshot.9" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" lower="0" upper="6.28319"/>
+<joint_properties friction="0.0"/>
+</joint>
+
+<joint name="RM_Fastened" type="fixed">
+<origin xyz="0.0298719 -9.90901e-05 0.0167895" rpy="3.14159 -0 3.14159" />
+<parent link="part_1" />
+<child link="n@)" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" />
+<joint_properties friction="0.0"/>
+</joint>
+
+<link name="n@)_2"><!-- Left Motor-->
+    <visual>
+        <origin xyz="0.127619 0.231707 0.00135678" rpy="3.14159 2.65197e-31 0" />
+    <geometry>
+        <mesh filename="package://os_robots_description/meshes/n@).stl"/>
+    </geometry>
+    <material name="n@)_material">
+    <color rgba="0.901961 0.878431 0.811765 1.0"/>
+    </material>
+    </visual>
+    <collision>
+        <origin xyz="0.127619 0.231707 0.00135678" rpy="3.14159 2.65197e-31 0" />
+    <geometry>
+        <mesh filename="package://os_robots_description/meshes/n@).stl"/>
+    </geometry>
+    <material name="n@)_material">
+        <color rgba="0.901961 0.878431 0.811765 1.0"/>
+    </material>
+    </collision>
+    <inertial>
+        <origin xyz="0.00683686 2.68432e-05 -0.0055173" rpy="0 0 0"/>
+        <mass value="0.0202353" />
+        <inertia ixx="3.93877e-07" ixy="7.1532e-09"  ixz="1.17044e-07" iyy="1.68208e-06" iyz="6.74559e-09" izz="1.66679e-06" />
+    </inertial>
+</link>
+
+<link name="n20-43mm-d-shaft-wheel-1.snapshot.9_2"><!-- Left wheel-->
+    <visual>
+        <origin xyz="-0.0365766 0.030151 0.0172766" rpy="-3.14159 1.63787e-47 0" />
+    <geometry>
+        <mesh filename="package://os_robots_description/meshes/n20-43mm-d-shaft-wheel-1.snapshot.9.stl"/>
+    </geometry>
+    <material name="n20-43mm-d-shaft-wheel-1.snapshot.9_material">
+        <color rgba="0 0 0 1.0"/>
+    </material>
+    </visual>
+    <collision>
+        <origin xyz="-0.0365766 0.030151 0.0172766" rpy="-3.14159 1.63787e-47 0" />
+    <geometry>
+        <mesh filename="package://os_robots_description/meshes/n20-43mm-d-shaft-wheel-1.snapshot.9.stl"/>
+    </geometry>
+    <material name="n20-43mm-d-shaft-wheel-1.snapshot.9_material">
+        <color rgba="0 0 0 1.0"/>
+    </material>
+    </collision>
+    <inertial>
+        <origin xyz="-8.41996e-08 4.29217e-05 -0.00381857" rpy="0 0 0"/>
+        <mass value="0.0222369" />
+        <inertia ixx="3.68546e-06" ixy="4.66188e-10"  ixz="-2.19354e-10" iyy="3.67087e-06" iyz="-1.16215e-10" izz="6.30613e-06" />
+    </inertial>
+</link>
+
+<joint name="LM_Revolute" type="revolute">
+<origin xyz="-0.0199 4.16334e-16 -0.005" rpy="-1.5708 2.83277e-16 1.5708" />
+<parent link="n@)_2" />
+<child link="n20-43mm-d-shaft-wheel-1.snapshot.9_2" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" lower="0" upper="6.28319"/>
+<joint_properties friction="0.0"/>
+</joint>
+
+<joint name="LM_Fastened" type="fixed">
+<origin xyz="-0.0301281 -9.90901e-05 0.0167895" rpy="3.14159 -0 0" />
+<parent link="part_1" />
+<child link="n@)_2" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" />
+<joint_properties friction="0.0"/>
+</joint>
+
+<link name="wheel''s_body"><!--Caster body @ back-->
+    <visual>
+        <origin xyz="0 0 0" rpy="-1.5708 -0 0" />
+    <geometry>
+        <mesh filename="package://os_robots_description/meshes/wheel''s_body.stl"/>
+    </geometry>
+    <material name="wheel''s_body_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+    </material>
+    </visual>
+    <collision>
+        <origin xyz="0 0 0" rpy="-1.5708 -0 0" />
+    <geometry>
+        <mesh filename="package://os_robots_description/meshes/wheel''s_body.stl"/>
+    </geometry>
+    <material name="wheel''s_body_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+    </material>
+    </collision>
+    <inertial>
+        <origin xyz="2.34209e-10 1.97015e-08 -0.00333562" rpy="0 0 0"/>
+        <mass value="0.0131095" />
+        <inertia ixx="5.28777e-07" ixy="-2.10565e-14"  ixz="-1.10312e-14" iyy="6.63513e-07" iyz="9.57429e-13" izz="1.06485e-06" />
+    </inertial>
+</link>
+
+<link name="ball"><!--Caster Ball @ back-->
+    <visual>
+        <origin xyz="0 0 0" rpy="0 -0 0" />
+    <geometry>
+        <mesh filename="package://os_robots_description/meshes/ball.stl"/>
+    </geometry>
+    <material name="ball_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+    </material>
+    </visual>
+    <collision>
+        <origin xyz="0 0 0" rpy="0 -0 0" />
+    <geometry>
+        <mesh filename="package://os_robots_description/meshes/ball.stl"/>
+    </geometry>
+    <material name="ball_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+    </material>
+    </collision>
+    <inertial>
+        <origin xyz="1.46269e-19 2.68691e-35 0" rpy="0 0 0"/>
+        <mass value="0.00838007" />
+        <inertia ixx="1.36015e-07" ixy="0"  ixz="0" iyy="1.36015e-07" iyz="0" izz="1.36015e-07" />
+    </inertial>
+</link>
+
+<joint name="CbB_Fastened" type="fixed">
+<origin xyz="0 0 -0.007826" rpy="3.14159 -0 0" />
+<parent link="wheel''s_body" />
+<child link="ball" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" />
+<joint_properties friction="0.0"/>
+</joint>
+
+<joint name="CB_Fastened" type="fixed">
+<origin xyz="-0.000128133 0.0448764 0.0142895" rpy="0 -0 0" />
+<parent link="part_1" />
+<child link="wheel''s_body" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" />
+<joint_properties friction="0.0"/>
+</joint>
+
+<link name="wheel''s_body_2"><!--Caster body @ front-->
+    <visual>
+        <origin xyz="0 0 0" rpy="-1.5708 -0 0" />
+    <geometry>
+        <mesh filename="package://os_robots_description/meshes/wheel''s_body.stl"/>
+    </geometry>
+    <material name="wheel''s_body_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+    </material>
+    </visual>
+    <collision>
+        <origin xyz="0 0 0" rpy="-1.5708 -0 0" />
+    <geometry>
+        <mesh filename="package://os_robots_description/meshes/wheel''s_body.stl"/>
+    </geometry>
+    <material name="wheel''s_body_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+    </material>
+    </collision>
+    <inertial>
+        <origin xyz="2.34209e-10 1.97015e-08 -0.00333562" rpy="0 0 0"/>
+        <mass value="0.0131095" />
+        <inertia ixx="5.28777e-07" ixy="-2.10565e-14"  ixz="-1.10312e-14" iyy="6.63513e-07" iyz="9.57429e-13" izz="1.06485e-06" />
+    </inertial>
+</link>
+
+<link name="ball_2"><!--Caster Ball @ front-->
+    <visual>
+        <origin xyz="0 0 0" rpy="0 -0 0" />
+    <geometry>
+        <mesh filename="package://os_robots_description/meshes/ball.stl"/>
+    </geometry>
+    <material name="ball_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+    </material>
+    </visual>
+    <collision>
+        <origin xyz="0 0 0" rpy="0 -0 0" />
+    <geometry>
+        <mesh filename="package://os_robots_description/meshes/ball.stl"/>
+    </geometry>
+    <material name="ball_material">
+        <color rgba="0.901961 0.901961 0.901961 1.0"/>
+    </material>
+    </collision>
+    <inertial>
+        <origin xyz="1.46269e-19 2.68691e-35 0" rpy="0 0 0"/>
+        <mass value="0.00838007" />
+        <inertia ixx="1.36015e-07" ixy="0"  ixz="0" iyy="1.36015e-07" iyz="0" izz="1.36015e-07" />
+    </inertial>
+</link>
+
+<joint name="CbF_Fastened" type="fixed">
+<origin xyz="0 0 -0.007826" rpy="3.14159 -0 0" />
+<parent link="wheel''s_body_2" />
+<child link="ball_2" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" />
+<joint_properties friction="0.0"/>
+</joint>
+
+<joint name="CF_Fastened" type="fixed">
+<origin xyz="-0.000128133 -0.0450998 0.0142895" rpy="0 -0 0" />
+<parent link="part_1" />
+<child link="wheel''s_body_2" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" />
+<joint_properties friction="0.0"/>
+</joint>
+
+
+</robot>
