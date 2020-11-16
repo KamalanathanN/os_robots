@@ -23,7 +23,7 @@
     <visual>
         <origin xyz= "-0.000128133 -9.90901e-05 0.0147895" rpy="1.69309e-15 6.93889e-18 -6.04901e-16" />
     <geometry>
-            <mesh filename="package://os_robots_description/meshes/backup/v1/part_1.stl"/>
+            <mesh filename="package://os_robots_description/meshes/part_1.stl"/>
     </geometry>
     <material name="part_1_material">
         <color rgba="0.301961 0.301961 0.301961 1.0"/>
@@ -32,7 +32,7 @@
     <collision>
         <origin xyz="-0.000128133 -9.90901e-05 0.0147895" rpy="1.69309e-15 6.93889e-18 -6.04901e-16" />
     <geometry>
-        <mesh filename="package://os_robots_description/meshes/backup/v1/part_1.stl"/>
+        <mesh filename="package://os_robots_description/meshes/part_1.stl"/>
     </geometry>
     <material name="part_1_material">
         <color rgba="0.301961 0.301961 0.301961 1.0"/>
@@ -49,7 +49,7 @@
     <visual>
         <origin xyz="0.127619 0.231707 0.00135678" rpy="3.14159 2.65197e-31 0" />
     <geometry>
-        <mesh filename="package://os_robots_description/meshes/backup/v1/n@).stl"/>
+        <mesh filename="package://os_robots_description/meshes/n@).stl"/>
     </geometry>
     <material name="n@)_material">
         <color rgba="0.901961 0.878431 0.811765 1.0"/>
@@ -58,7 +58,7 @@
     <collision>
         <origin xyz="0.127619 0.231707 0.00135678" rpy="3.14159 2.65197e-31 0" />
     <geometry>
-        <mesh filename="package://os_robots_description/meshes/backup/v1/n@).stl"/>
+        <mesh filename="package://os_robots_description/meshes/n@).stl"/>
     </geometry>
     <material name="n@)_material">
         <color rgba="0.901961 0.878431 0.811765 1.0"/>
@@ -75,16 +75,16 @@
     <visual>
         <origin xyz="-0.0365766 0.030151 0.0172766" rpy="3.14159 9.86076e-32 0" />
     <geometry>
-        <mesh filename="package://os_robots_description/meshes/backup/v1/n20-43mm-d-shaft-wheel-1.snapshot.9.stl"/>
+        <mesh filename="package://os_robots_description/meshes/n20-43mm-d-shaft-wheel-1.snapshot.9.stl"/>
     </geometry>
     <material name="n20-43mm-d-shaft-wheel-1.snapshot.9_material">
         <color rgba="0 0 0 1.0"/>
     </material>
     </visual>
     <collision>
-        <origin xyz="-0.0365766 0.030151 0.0172766" rpy="3.14159 9.86076e-32 0" /><!--3.14159 9.86076e-32 0-->
+        <origin xyz="-0.0365766 0.030151 0.0172766" rpy="0 0 0" /><!--3.14159 9.86076e-32 0-->
     <geometry>
-        <mesh filename="package://os_robots_description/meshes/backup/v1/n20-43mm-d-shaft-wheel-1.snapshot.9.stl"/>
+        <cylinder length="0.018" radius="0.0215"/><!--<mesh filename="package://os_robots_description/meshes/n20-43mm-d-shaft-wheel-1.snapshot.9.stl"/>-->
     </geometry>
     <material name="n20-43mm-d-shaft-wheel-1.snapshot.9_material">
         <color rgba="0 0 0 1.0"/>
@@ -102,7 +102,7 @@
 <parent link="n@)" />
 <child link="n20-43mm-d-shaft-wheel-1.snapshot.9" />
 <axis xyz="0 0 1"/>
-<limit effort="100" velocity="100" />
+<limit effort="1" velocity="20" />
 <joint_properties friction="0.0"/>
 </joint>
 
@@ -131,7 +131,7 @@
     <visual>
         <origin xyz="0.127619 0.231707 0.00135678" rpy="3.14159 2.65197e-31 0" />
     <geometry>
-        <mesh filename="package://os_robots_description/meshes/backup/v1/n@).stl"/>
+        <mesh filename="package://os_robots_description/meshes/n@).stl"/>
     </geometry>
     <material name="n@)_material">
     <color rgba="0.901961 0.878431 0.811765 1.0"/>
@@ -140,7 +140,7 @@
     <collision>
         <origin xyz="0.127619 0.231707 0.00135678" rpy="3.14159 2.65197e-31 0" />
     <geometry>
-        <mesh filename="package://os_robots_description/meshes/backup/v1/n@).stl"/>
+        <mesh filename="package://os_robots_description/meshes/n@).stl"/>
     </geometry>
     <material name="n@)_material">
         <color rgba="0.901961 0.878431 0.811765 1.0"/>
@@ -157,16 +157,16 @@
     <visual>
         <origin xyz="-0.0365766 0.030151 0.0172766" rpy= "-3.14159 1.63787e-47 0"/> <!--"-3.14159 1.63787e-47 0"-->
     <geometry>
-        <mesh filename="package://os_robots_description/meshes/backup/v1/n20-43mm-d-shaft-wheel-1.snapshot.9.stl"/>
+        <mesh filename="package://os_robots_description/meshes/n20-43mm-d-shaft-wheel-1.snapshot.9.stl"/>
     </geometry>
     <material name="n20-43mm-d-shaft-wheel-1.snapshot.9_material">
         <color rgba="0 0 0 1.0"/>
     </material>
     </visual>
     <collision>
-        <origin xyz="-0.0365766 0.030151 0.0172766" rpy= "-3.14159 1.63787e-47 0"/><!--"-3.14159 1.63787e-47 0"-->
+        <origin xyz="-0.0365766 0.030151 0.0172766" rpy= "0 0 0"/><!--"-3.14159 1.63787e-47 0"-->
     <geometry>
-        <mesh filename="package://os_robots_description/meshes/backup/v1/n20-43mm-d-shaft-wheel-1.snapshot.9.stl"/>
+         <cylinder length="0.018" radius="0.0215"/><!--<mesh filename="package://os_robots_description/meshes/n20-43mm-d-shaft-wheel-1.snapshot.9.stl"/>-->
     </geometry>
     <material name="n20-43mm-d-shaft-wheel-1.snapshot.9_material">
         <color rgba="0 0 0 1.0"/>
@@ -183,8 +183,8 @@
 <origin xyz="-0.0199 4.16334e-16 -0.005" rpy="-1.5708 2.83277e-16 1.5708" />
 <parent link="n@)_2" />
 <child link="n20-43mm-d-shaft-wheel-1.snapshot.9_2" />
-<axis xyz="0 0 -1"/>
-<limit effort="100" velocity="100"/>
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20"/>
 <joint_properties friction="0.0"/>
 </joint>
 
@@ -213,7 +213,7 @@
     <visual>
         <origin xyz="0 0 0" rpy="-1.5708 -0 0" />
     <geometry>
-        <mesh filename="package://os_robots_description/meshes/backup/v1/wheel''s_body.stl"/>
+        <mesh filename="package://os_robots_description/meshes/wheel''s_body.stl"/>
     </geometry>
     <material name="wheel''s_body_material">
         <color rgba="0.901961 0.901961 0.901961 1.0"/>
@@ -222,7 +222,7 @@
     <collision>
         <origin xyz="0 0 0" rpy="-1.5708 -0 0" />
     <geometry>
-        <mesh filename="package://os_robots_description/meshes/backup/v1/wheel''s_body.stl"/>
+        <mesh filename="package://os_robots_description/meshes/wheel''s_body.stl"/>
     </geometry>
     <material name="wheel''s_body_material">
         <color rgba="0.901961 0.901961 0.901961 1.0"/>
@@ -239,7 +239,7 @@
     <visual>
         <origin xyz="0 0 0" rpy="0 -0 0" />
     <geometry>
-        <mesh filename="package://os_robots_description/meshes/backup/v1/ball.stl"/>
+        <mesh filename="package://os_robots_description/meshes/ball.stl"/>
     </geometry>
     <material name="ball_material">
         <color rgba="0.901961 0.901961 0.901961 1.0"/>
@@ -248,7 +248,7 @@
     <collision>
         <origin xyz="0 0 0" rpy="0 -0 0" />
     <geometry>
-        <mesh filename="package://os_robots_description/meshes/backup/v1/ball.stl"/>
+        <mesh filename="package://os_robots_description/meshes/ball.stl"/>
     </geometry>
     <material name="ball_material">
         <color rgba="0.901961 0.901961 0.901961 1.0"/>
@@ -283,7 +283,7 @@
     <visual>
         <origin xyz="0 0 0" rpy="-1.5708 -0 0" />
     <geometry>
-        <mesh filename="package://os_robots_description/meshes/backup/v1/wheel''s_body.stl"/>
+        <mesh filename="package://os_robots_description/meshes/wheel''s_body.stl"/>
     </geometry>
     <material name="wheel''s_body_material">
         <color rgba="0.901961 0.901961 0.901961 1.0"/>
@@ -292,7 +292,7 @@
     <collision>
         <origin xyz="0 0 0" rpy="-1.5708 -0 0" />
     <geometry>
-        <mesh filename="package://os_robots_description/meshes/backup/v1/wheel''s_body.stl"/>
+        <mesh filename="package://os_robots_description/meshes/wheel''s_body.stl"/>
     </geometry>
     <material name="wheel''s_body_material">
         <color rgba="0.901961 0.901961 0.901961 1.0"/>
@@ -309,7 +309,7 @@
     <visual>
         <origin xyz="0 0 0" rpy="0 -0 0" />
     <geometry>
-        <mesh filename="package://os_robots_description/meshes/backup/v1/ball.stl"/>
+        <mesh filename="package://os_robots_description/meshes/ball.stl"/>
     </geometry>
     <material name="ball_material">
         <color rgba="0.901961 0.901961 0.901961 1.0"/>
@@ -318,7 +318,7 @@
     <collision>
         <origin xyz="0 0 0" rpy="0 -0 0" />
     <geometry>
-        <mesh filename="package://os_robots_description/meshes/backup/v1/ball.stl"/>
+        <mesh filename="package://os_robots_description/meshes/ball.stl"/>
     </geometry>
     <material name="ball_material">
         <color rgba="0.901961 0.901961 0.901961 1.0"/>

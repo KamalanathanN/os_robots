@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot name="tw_base_v1_sim" xmlns:xacro="http://ros.org/wiki/xacro">
+<robot name="tw_base_v2_sim" xmlns:xacro="http://ros.org/wiki/xacro">
 
     <gazebo reference="part_1"><!--base_link-->
         <material>Gazebo/DarkGrey</material>
@@ -7,49 +7,23 @@
 
 
     <gazebo reference="n20-43mm-d-shaft-wheel-1.snapshot.9_2"><!--wheel_left_link>-->
-        <!-- <mu1>0.1</mu1>
-        <mu2>0.1</mu2>
-        <kp>500000.0</kp>
-        <kd>10.0</kd>
-        <minDepth>0.001</minDepth>
-        <maxVel>0.1</maxVel>
-        <fdir1>1 0 0</fdir1> -->
         <material>Gazebo/FlatBlack</material>
     </gazebo>
 
     <gazebo reference="n20-43mm-d-shaft-wheel-1.snapshot.9"><!--wheel_right_link-->
-        <!-- <mu1>0.1</mu1>
-        <mu2>0.1</mu2>
-        <kp>500000.0</kp>
-        <kd>10.0</kd>
-        <minDepth>0.001</minDepth>
-        <maxVel>0.1</maxVel>
-        <fdir1>1 0 0</fdir1> -->
         <material>Gazebo/FlatBlack</material>
     </gazebo>
 
     <gazebo reference="ball">
-        <!-- <mu1>0.1</mu1>
-        <mu2>0.1</mu2>
-        <kp>1000000.0</kp>
-        <kd>100.0</kd>
-        <minDepth>0.001</minDepth>
-        <maxVel>1.0</maxVel> -->
         <material>Gazebo/FlatBlack</material>
     </gazebo>
 
     <gazebo reference="ball_2">
-        <!-- <mu1>0.1</mu1>
-        <mu2>0.1</mu2>
-        <kp>1000000.0</kp>
-        <kd>100.0</kd>
-        <minDepth>0.001</minDepth>
-        <maxVel>1.0</maxVel> -->
         <material>Gazebo/FlatBlack</material>
     </gazebo>
 
     <gazebo>
-        <plugin name="tw_base_v1_controller" filename="libgazebo_ros_diff_drive.so">
+        <plugin name="tw_base_v2_controller" filename="libgazebo_ros_diff_drive.so">
         <commandTopic>cmd_vel</commandTopic>
         <odometryTopic>odom</odometryTopic>
         <odometryFrame>odom</odometryFrame>

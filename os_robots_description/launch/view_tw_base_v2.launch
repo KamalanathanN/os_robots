@@ -1,0 +1,12 @@
+<launch>
+	<arg name="model" />
+
+	<!-- Parsing xacro and setting robot_description parameter -->
+	<param name="robot_description" command="$(find xacro)/xacro $(find os_robots_description)/urdf/tw_base_v2.urdf.xacro" />
+
+	<!-- Starting Joint state publisher node which will publish the 	joint values. Using the gui alterantive -->
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+	<!-- Launch visualization in rviz -->
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find os_robots_description)/rviz/tw_base_urdf.rviz" required="false" />
+</launch>
